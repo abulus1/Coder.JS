@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Gestor de Tareas</h1>
+
+        <div class="listaDeTareas">
+            <h2>Seleccione que desea hacer</h2>
+            <ul id="listaDeTareas"></ul>
+        </div>
+
+        <div class="botones">
+            <button onclick="AgregarTarea()">Agregar Tarea</button>
+            <button onclick="EliminarTarea()">Eliminar Tarea</button>
+            <button onclick="EditarTarea()">Editar Tarea</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
