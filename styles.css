@@ -1,135 +1,129 @@
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Body styles */
 body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background-color: #eaeaea;
+    background-color: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    height: 100vh;
 }
 
-/* Main container */
+/* Contenedor principal */
 .container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 500px;
+    background-color: #fff;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     text-align: center;
-    transition: all 0.3s ease;
 }
 
 h1 {
-    color: #333;
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 24px;
+    color: #333;
 }
 
+/* Estilo para agregar tarea */
+.agregarTarea {
+    margin-bottom: 20px;
+}
+
+.agregarTarea input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.agregarTarea input:focus {
+    border-color: #007bff;
+}
+
+.agregarTarea button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.agregarTarea button:hover {
+    background-color: #0056b3;
+}
+
+/* Lista de tareas */
 .listaDeTareas {
-    margin-bottom: 25px;
+    text-align: left;
 }
 
 .listaDeTareas h2 {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
 }
 
-/* Task list */
-ul {
-    list-style-type: none;
+#lista-tareas {
+    list-style: none;
     padding: 0;
 }
 
-ul li {
-    background-color: #f3f3f3;
-    margin: 10px 0;
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    color: #444;
-    font-size: 1rem;
+#lista-tareas li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-ul li:hover {
-    background-color: #e1e1e1;
-}
-
-/* Buttons */
-.botones {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-button {
-    background-color: #0066ff;
-    color: white;
-    padding: 12px 20px;
+/* Botones de editar y eliminar */
+#lista-tareas li button {
+    padding: 5px 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 14px;
     transition: background-color 0.3s ease;
-    flex: 1 1 45%;
-    min-width: 120px;
 }
 
-button:hover {
-    background-color: #0052cc;
+#lista-tareas li button:hover {
+    opacity: 0.8;
 }
 
-/* Responsive design */
+#lista-tareas li button:first-child {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+#lista-tareas li button:last-child {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Efecto hover en las tareas */
+#lista-tareas li:hover {
+    background-color: #f1f3f5;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    button {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-
-    ul li {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    ul li {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-    }
-
-    button {
-        font-size: 0.85rem;
-        padding: 8px 12px;
+        width: 90%;
     }
 }

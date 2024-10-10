@@ -10,15 +10,14 @@
     <div class="container">
         <h1>Gestor de Tareas</h1>
 
-        <div class="listaDeTareas">
-            <h2>Seleccione que desea hacer</h2>
-            <ul id="listaDeTareas"></ul>
+        <div class="agregarTarea">
+            <input type="text" id="nueva-tarea" placeholder="Ingrese nueva tarea">
+            <button id="agregar-tarea">Agregar Tarea</button>
         </div>
 
-        <div class="botones">
-            <button onclick="AgregarTarea()">Agregar Tarea</button>
-            <button onclick="EliminarTarea()">Eliminar Tarea</button>
-            <button onclick="EditarTarea()">Editar Tarea</button>
+        <div class="listaDeTareas">
+            <h2>Tareas pendientes</h2>
+            <ul id="lista-tareas"></ul>
         </div>
     </div>
 
