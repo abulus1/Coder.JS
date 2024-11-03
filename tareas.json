@@ -1,0 +1,16 @@
+[
+    {
+        "nombre": "Tarea 1",
+        "descripcion": "Descripción de la tarea 1",
+        "fecha": "2024-11-05",
+        "prioridad": "Alta",
+        "completada": false
+    },
+    {
+        "nombre": "Tarea 2",
+        "descripcion": "Descripción de la tarea 2",
+        "fecha": "2024-11-10",
+        "prioridad": "Media",
+        "completada": true
+    }
+]

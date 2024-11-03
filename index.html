@@ -3,21 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Tareas</title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Gestor de Tareas</h1>
+        <h1>Lista de Tareas</h1>
 
-        <div class="agregarTarea">
-            <input type="text" id="nueva-tarea" placeholder="Ingrese nueva tarea">
-            <button id="agregar-tarea">Agregar Tarea</button>
+        <!-- Contenedor de Inicio de Sesión -->
+        <div id="login-container">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="username" placeholder="Nombre de usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button id="login-button">Iniciar Sesión</button>
+            <p id="login-error" style="color:red;"></p>
         </div>
 
-        <div class="listaDeTareas">
-            <h2>Tareas pendientes</h2>
-            <ul id="lista-tareas"></ul>
+        <!-- Contenedor de la To-Do List (oculto inicialmente) -->
+        <div id="todo-container" style="display:none;">
+            <!-- Buscador -->
+            <div class="input-container">
+                <input type="text" id="buscar-tarea" placeholder="Buscar tarea...">
+            </div>
+
+            <!-- Filtros de Estado -->
+            <div class="filter-buttons">
+                <button id="filtro-todas">Todas</button>
+                <button id="filtro-completadas">Completadas</button>
+                <button id="filtro-pendientes">Pendientes</button>
+            </div>
+
+            <!-- Lista de Tareas -->
+            <ul id="lista-tareas" class="task-list"></ul>
+
+            <!-- Formulario de Nueva Tarea -->
+            <div class="task-form">
+                <input type="text" id="nueva-tarea" placeholder="Nueva tarea">
+                <input type="text" id="descripcion-tarea" placeholder="Descripción de la tarea">
+                <input type="date" id="fecha-tarea">
+                <select id="prioridad-tarea">
+                    <option>Baja</option>
+                    <option>Media</option>
+                    <option>Alta</option>
+                </select>
+                <button id="agregar-tarea" onclick="AgregarTarea()">Agregar Tarea</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal (oculto por ahora) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-message"></p>
+            <button id="confirm-button">Confirmar</button>
+            <button id="cancel-button">Cancelar</button>
+            <button id="ok-button">OK</button>
         </div>
     </div>
 
